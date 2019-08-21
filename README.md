@@ -1,9 +1,6 @@
 ### Date created
 *21st August 2019*
 
-### Date last amended
-*21st August 2019*
-
 ### Repository Name
 *pdsnd_github*
 
@@ -24,3 +21,8 @@ Cities available are **Chicago**, **New York City** and **Washington**
 ### Credits
 * [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 * [Udacity Git Commit Style Guide](https://udacity.github.io/git-styleguide/)
+
+### Updates and revisions
+* 21/08/2019
+    1. Readme file updated with project information
+    2. Updates and revisions section included, date amended section removed
