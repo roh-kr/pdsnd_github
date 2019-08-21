@@ -252,6 +252,8 @@ def not_a_number_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def print_raw_data(df):
+    """Displays not a number information on bikeshare users dataframe"""
 
 
 def main():
