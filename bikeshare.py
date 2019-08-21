@@ -253,8 +253,31 @@ def not_a_number_stats(df):
     print('-'*40)
 
 def print_raw_data(df):
-    """Displays not a number information on bikeshare users dataframe"""
+    """Prints raw data in multiples of 5"""
 
+    print('\nPrinting Raw Data...\n')
+    start_time = time.time()
+
+    #Create loop to print first 5 rows of raw data
+    sample_raw_data = input('\nWould you like view 5 rows of the raw data? Enter yes or no.\n')
+    if sample_raw_data.lower() != 'yes':
+        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        if restart.lower() != 'yes':
+            break
+    elif sample_raw_data.lower() == 'yes':
+        print(df.head())
+        #Create loop to print subseqent raw data in iterations of 5 as long as requested
+        rows = 10
+        while input('\nWould you like view 5 more rows of the raw data? Enter yes or no.\n').lower() == 'yes':
+            print(df.head(rows))
+            rows += 5
+
+        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        if restart.lower() != 'yes':
+            break
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
 
 def main():
     while True:
@@ -267,25 +290,7 @@ def main():
         user_stats(df,city)
         #correlation_stats(df) #Removed as there were not enough float values
         not_a_number_stats(df)
-
-        #Create loop to print first 5 rows of raw data
-        sample_raw_data = input('\nWould you like view 5 rows of the raw data? Enter yes or no.\n')
-        if sample_raw_data.lower() != 'yes':
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
-            if restart.lower() != 'yes':
-                break
-        elif sample_raw_data.lower() == 'yes':
-            print(df.head())
-            #Create loop to print subseqent raw data in iterations of 5 as long as requested
-            rows = 10
-            while input('\nWould you like view 5 more rows of the raw data? Enter yes or no.\n').lower() == 'yes':
-                print(df.head(rows))
-                rows += 5
-
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
-            if restart.lower() != 'yes':
-                break
-
+        print_raw_data(df)
 
 if __name__ == "__main__":
     main()
